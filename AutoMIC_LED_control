@@ -1,0 +1,18 @@
+const  int microphonePin = 0;
+const int ledPin = 13;
+int sample;
+const int threshold =80;
+void setup()
+{
+  pinMode(ledPin,OUTPUT);
+  Serial.begin(9600);
+}
+void loop()
+{
+  sample = analogRead(microphonePin);
+  if(sample>threshold)
+  {
+    digitalWrite(ledPin,HIGH);
+  }
+
+}
